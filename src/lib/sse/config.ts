@@ -1,0 +1,26 @@
+export const SSE_CONFIG = {
+  HEARTBEAT_INTERVAL: 30000,
+  CLIENT_TIMEOUT: 60000,
+  MAX_CLIENTS: 10000,
+
+  MAX_MESSAGE_SIZE: 64 * 1024,
+  MAX_QUEUE_SIZE: 100,
+
+  DEFAULT_RETRY: 3000,
+  MAX_RETRY: 30000,
+
+  RATE_LIMIT_WINDOW: 60000,
+  RATE_LIMIT_MAX_EVENTS: 100,
+
+  ENABLE_DEBUG_LOGS: process.env.NODE_ENV === "development",
+  LOG_CLIENT_CONNECTIONS: true,
+  LOG_EVENT_DISPATCHING: process.env.NODE_ENV === "development",
+
+  ENABLE_HEARTBEAT: true,
+  ENABLE_CLIENT_CLEANUP: true,
+  ENABLE_RATE_LIMITING: false,
+
+  CORS_ORIGINS: process.env.ALLOWED_ORIGINS?.split(",") ?? ["*"],
+  CORS_HEADERS: ["Cache-Control", "Authorization", "Content-Type"],
+  CORS_METHODS: ["GET", "OPTIONS"],
+} as const;
