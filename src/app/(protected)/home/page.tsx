@@ -9,8 +9,6 @@ const HomePage = async () => {
     await signOut();
   };
 
-  console.log(" HomePage ====>>>>", session);
-
   return (
     <>
       <WelcomeMessage name={session?.user.name ?? ""} signOut={handleSignOut} />
